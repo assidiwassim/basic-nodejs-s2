@@ -5,7 +5,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  job-1:
+
+  build-and-push:
+
     runs-on: ubuntu-latest 
 
     steps:
@@ -15,4 +17,7 @@ jobs:
 
       - name: list of files.
         run: ls
+
+      - name: check docker version.
+        run: docker -v
         
