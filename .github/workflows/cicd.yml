@@ -15,11 +15,11 @@ jobs:
       - name: Clone code from github
         uses: actions/checkout@v4
 
-      - name: list of files.
-        run: ls
-
       - name: build docker image
         run: docker build -t basic-nodejs-s1-image:latest .
-        
+
+      - name: tag docker image
+        run: docker tag basic-nodejs-s1-image:latest assidiwassimdev/basic-nodejs-s1-image:latest
+
       - name: list of images
         run: docker images
