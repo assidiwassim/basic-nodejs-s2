@@ -23,3 +23,7 @@ jobs:
 
       - name: list of images
         run: docker images
+        
+      - name: list of images
+        run: docker images
+      
