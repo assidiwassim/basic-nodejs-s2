@@ -1,11 +1,8 @@
-version: '3.8'
+version: '3.9'
 
 services:
   basic-nodejs:
-    image: basic-nodejs
+    image: basic-nodejs-s1
     build: .
     ports:
-      - "3007:3000"
-    volumes:
-      - .:/my-workspace #bi-directionnel
-    command: npm run dev
+      - "3001:3000"
