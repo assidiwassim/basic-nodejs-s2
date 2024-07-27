@@ -18,6 +18,8 @@ jobs:
       - name: list of files.
         run: ls
 
-      - name: check docker version.
-        run: docker -v
+      - name: build docker image
+        run: docker build -t basic-nodejs-s1-image:latest .
         
+      - name: list of images
+        run: docker images
