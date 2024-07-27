@@ -30,4 +30,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: push docker image to docker hub
+        run: docker push assidiwassimdev/basic-nodejs-s1-image:latest
+
       
