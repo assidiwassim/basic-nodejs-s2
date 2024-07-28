@@ -15,7 +15,7 @@ jobs:
     steps:
     
       - name: step-1
-        run: echo message=>step-1/job-1
+        run: echo step-1/job-1
 
   job-2:
 
@@ -24,7 +24,7 @@ jobs:
     steps:
     
       - name: step-1
-        run: echo message=>step-1/job-2
+        run: echo step-1/job-2
 
   job-3:
 
@@ -33,4 +33,4 @@ jobs:
     steps:
     
       - name: step-1
-        run: echo message=>step-1/job-3
+        run: echo step-1/job-3
