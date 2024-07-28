@@ -3,8 +3,6 @@ name: CI/CD of basic-nodejs-s2
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
 
