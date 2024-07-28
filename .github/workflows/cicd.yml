@@ -16,6 +16,9 @@ jobs:
      
       - name: Clone code in the current folder
         uses: actions/checkout@v4
+    
+      - name: show source code
+        run: ls
 
       - name: show message in the runner terminal
         run: echo Hello, chabeb !
