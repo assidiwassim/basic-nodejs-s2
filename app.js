@@ -4,23 +4,9 @@ const app = express();
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
-const calculate = require('./calculate')
-
 app.get("/", (req, res) => {
-  res.send("Hello Devops - session 1 ... ");
+  res.send("Hello Devops - session 2 ... ");
 });
-
-app.post("/sum", (req, res) => {
-  const { a, b } = req.body
-  res.status(201).send({ sum: calculate.sum(a, b) })
-});
-
-
-app.post("/multiple", (req, res) => {
-  const { a, b } = req.body
-  res.status(201).send({ multiple: calculate.multiple(a, b) })
-});
-
 
 const port = 3000;
 
