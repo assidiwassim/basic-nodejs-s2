@@ -5,7 +5,7 @@ app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.send("Hello Devops - session 2 ... ");
+  res.send("Hello Devops - session 2 ... test ");
 });
 
 const port = 3000;
