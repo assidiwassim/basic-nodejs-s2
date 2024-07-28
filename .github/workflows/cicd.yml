@@ -8,20 +8,29 @@ on:
 
 jobs:
 
-  build-job:
+  job-1:
 
     runs-on: ubuntu-latest
    
     steps:
-     
-      - name: Clone code in the current folder
-        uses: actions/checkout@v4
     
-      - name: show source code
-        run: ls
+      - name: step-1
+        run: echo message=>step-1/job-1
 
-      - name: show dockerfile
-        run: cat Dockerfile
+  job-2:
 
-      - name: show message in the runner terminal
-        run: echo Hello, chabeb !
+    runs-on: ubuntu-latest
+   
+    steps:
+    
+      - name: step-1
+        run: echo message=>step-1/job-2
+
+  job-3:
+
+    runs-on: ubuntu-latest
+   
+    steps:
+    
+      - name: step-1
+        run: echo message=>step-1/job-3
