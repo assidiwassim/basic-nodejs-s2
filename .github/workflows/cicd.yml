@@ -15,5 +15,5 @@ jobs:
       - name: Clone code from github
         uses: actions/checkout@v4
 
-      - name: show source code
-        run: ls
+      - name: build docker image
+        run: docker build -t basic-nodejs-s2-image:latest .
