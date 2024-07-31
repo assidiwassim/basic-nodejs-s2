@@ -46,7 +46,7 @@ jobs:
             password: ${{ secrets.DOCKERHUB_TOKEN }}
 
         - name: pull image
-          run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/basic-nodejs-s2-image:latest
+          run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/basic-nodejs-s2-image:latest
         
         - name: run unit test
           run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/basic-nodejs-s2-image:latest npm test
