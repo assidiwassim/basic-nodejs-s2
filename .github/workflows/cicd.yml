@@ -17,6 +17,10 @@ jobs:
 
       - name: build docker image
         run: docker build -t basic-nodejs-s2-image:latest .
+      
+      - name: tag docker image
+        run: docker tag basic-nodejs-s2-image:latest assidiwassimdev/basic-nodejs-s2-image:latest
 
-      - name: show images
+      - name: show docker images
         run: docker images
+
