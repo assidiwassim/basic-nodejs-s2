@@ -6,15 +6,14 @@ on:
 
 jobs:
 
-  job-1:
+  build-and-push:
     
     runs-on: ubuntu-latest
    
     steps:
     
-      - name: step-1
-        run: echo step-1/job-1
+      - name: Clone code from github
+        uses: actions/checkout@v4
 
-    
-      - name: step-1
-        run: echo step-1/job-3
+      - name: show source code
+        run: ls
