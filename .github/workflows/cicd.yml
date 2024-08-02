@@ -50,3 +50,29 @@ jobs:
         
         - name: run unit test
           run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/basic-nodejs-s2-image:latest npm test
+
+
+  deploy:
+
+        needs: ["test"]
+
+
+        runs-on: ubuntu-latest
+
+        steps:
+
+
+          - name: connect to the VPS using SSH.
+            uses: appleboy/ssh-action@master
+            with:
+              host: ${{ secrets.VPS_HOST }}
+              username: ${{ secrets.VPS_USERNAME }}
+              password:  ${{ secrets.VPS_PASSWORD }}
+    
+              script: | 
+
+                  sudo docker ps
+
+
+    
+
