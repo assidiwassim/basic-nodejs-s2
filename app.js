@@ -8,7 +8,7 @@ const calculate = require('./calculate')
 
 
 app.get("/", (req, res) => {
-  res.send("Hello Devops - session 2 ");
+  res.send("Hello Devops - session 2 pro ");
 });
 
 app.post("/cal", (req, res) => {
