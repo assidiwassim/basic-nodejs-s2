@@ -81,5 +81,14 @@ jobs:
                   sudo docker run -d -p 3002:3000 --name basic-nodejs-s2-container  ${{ secrets.DOCKERHUB_USERNAME }}/basic-nodejs-s2-image:${{ env.BUILD_NUMBER }}
 
 
-    
+  health_check:
+    needs: deploy
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Wait for service to start
+        run: sleep 10s 
+
+      - name: Test Health Check
+        run: |
+          curl https://session-2.lebondeveloppeur.com/health || exit 1 # Fail the job if health check fails

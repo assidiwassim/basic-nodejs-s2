@@ -43,6 +43,27 @@ app.post("/cal", (req, res) => {
   res.send({ "cal": calculate.cal(a, b) });
 });
 
+
+// Health check endpoint
+app.get("/health", async (req, res) => {
+  try {
+    // Perform a simple database operation to check database health.
+    await mongoose.connection.db.admin().ping();
+    res.status(200).json({
+      status: "UP",
+      message: "App is running smoothly...",
+      database: "Connected",
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "DOWN",
+      message: "App or Database is experiencing issues...",
+      database: "Disconnected",
+    });
+  }
+});
+
+
 const port = 3000;
 
 app.listen(port, () => console.log("Server running on port 3000"));
