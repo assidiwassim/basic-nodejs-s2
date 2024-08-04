@@ -91,4 +91,4 @@ jobs:
 
       - name: Test Health Check
         run: |
-          curl https://session-2.lebondeveloppeur.com/health || exit 1 # Fail the job if health check fails
+          curl https://session-2.lebondeveloppeur.net/health || exit 1 # Fail the job if health check fails
