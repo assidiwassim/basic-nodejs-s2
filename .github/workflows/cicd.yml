@@ -75,7 +75,7 @@ jobs:
                   sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/basic-nodejs-s2-image:${{ env.BUILD_NUMBER }}
                   sudo docker stop basic-nodejs-s2-container 
                   sudo docker rm basic-nodejs-s2-container 
-                  sudo docker run -d -p 3003:3000 --name basic-nodejs-s2-container  ${{ secrets.DOCKERHUB_USERNAME }}/basic-nodejs-s2-image:${{ env.BUILD_NUMBER }}
+                  sudo docker run -d -p 3002:3000 --name basic-nodejs-s2-container  ${{ secrets.DOCKERHUB_USERNAME }}/basic-nodejs-s2-image:${{ env.BUILD_NUMBER }}
 
 
   health_check:
