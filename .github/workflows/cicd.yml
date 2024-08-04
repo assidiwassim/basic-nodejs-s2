@@ -4,7 +4,6 @@ on:
   push:
     branches: [ "main" ]
 
-
 env:
   BUILD_NUMBER: ${{ github.run_number }}
 
@@ -60,11 +59,9 @@ jobs:
 
         needs: ["test"]
 
-
         runs-on: ubuntu-latest
 
         steps:
-
 
           - name: connect to the VPS using SSH.
             uses: appleboy/ssh-action@master
@@ -91,4 +88,11 @@ jobs:
 
       - name: Test Health Check
         run: |
-          curl https://session-2.lebondeveloppeur.net/health || exit 1 # Fail the job if health check fails
+          RESPONSE=$(curl -s https://session-2.lebondeveloppeur.net/health)
+          EXPECTED='{"status":"UP","message":"App is running smoothly...","database":"Connected"}'
+          if [ "$RESPONSE" != "$EXPECTED" ]; then
+            echo "Health check failed: $RESPONSE"
+            exit 1
+          else
+            echo "Health check passed: $RESPONSE"
+          fi
